@@ -13,34 +13,51 @@ Install with `npm` by using:
 
 ## Use
 
+### Mean
+
 ```javascript 
 var stats = require('stats-online');
 
 // calculating the average online
 var foo = new stats.incrementer();
-for (var i = 0; i < 100; i++){
+for (var i = 0; i < 10; i++){
   foo.push(i);
   console.log(foo.mean());
 }
-
+```
+### Variance
+```javascript 
+var stats = require('stats-online');
 // calculating the variance online
 var foo = new stats.incrementer();
-for (var i = 0; i < 100; i++){
+for (var i = 0; i < 10; i++){
   foo.push(i);
   console.log(foo.variance());
 }
+```
+
+### Standard Deviation
+```javascript 
+var stats = require('stats-online');
 
 // calculating the standard deviation online
 var foo = new stats.incrementer();
-for (var i = 0; i < 100; i++){
+for (var i = 0; i < 10; i++){
   foo.push(i);
   console.log(foo.standardDeviation());
 }
+```
 
+### Sample Size
+```javascript 
+var stats = require('stats-online');
 // calculating the minimum sample size online
 var foo = new stats.incrementer();
-for (var i = 0; i < 100; i++){
+for (var i = 0; i < 10; i++){
+  foo.push(i);
+  foo.push(i);
   foo.push(i);
   console.log(foo.minimumSample());
+  console.log(foo.sufficientSampleSize());
 }
 ```
