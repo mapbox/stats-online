@@ -1,4 +1,23 @@
 module.exports = {
+  'multiLayeredPooling': [
+    {
+      'partA': [0, 1, 2, 3],
+      'partB': [4, 5, 6, 7],
+      'partC': [8, 9, 10],
+      'pooledMean': 5,
+      'pooledVariance': 10,
+      'individualVariances': {
+        'partA': 1.25,
+        'partB': 1.25,
+        'partC': 2/3
+      },
+      'individualMeans': {
+        'partA': 1.5,
+        'partB': 5.5,
+        'partC': 9
+      }
+    }
+  ],
   'precalculatedSets': [
     {
       'partA': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -7,7 +26,7 @@ module.exports = {
       'pooledVariance': 38.5,
       'pooledStandardDeviation': 6.2048368229954285,
       'individualVariances': {
-        'partA': 11,
+        'partA': 10,
         'partB': 9.1666666666666
       },
       'individualMeans': {
