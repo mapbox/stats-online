@@ -11,7 +11,7 @@ test('incremental variance', function (t) {
   rs.push(24.0);
   rs.push(39.0);
   rs.push(102.0);
-  t.equal(rs.variance().toFixed(4), 1014.16.toFixed(4), 'variance calculates correctly');
+  t.equal(rs.getVariance().toFixed(4), 1014.16.toFixed(4), 'variance calculates correctly');
   t.end();
 });
 

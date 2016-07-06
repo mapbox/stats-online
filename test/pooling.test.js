@@ -24,7 +24,7 @@ test('pooled mean', function (t) {
     }
 
     var pooled = poolMeans(incrementer1, incrementer2);
-    t.equal(unified.mean(), pooled, 'means are pooled as if they were calculated explicitly')
+    t.equal(unified.getMean(), pooled, 'means are pooled as if they were calculated explicitly')
 
   }
   t.end();
@@ -55,14 +55,14 @@ test('pool of pooled variance', function (t) {
     }
 
     var pooled = poolVariances(incrementer1, incrementer2);
-    t.equal(unified.variance(), pooled.variance(), 'variances are pooled as if they were calculated explicitly')
+    t.equal(unified.getVariance(), pooled.variance, 'variances are pooled as if they were calculated explicitly')
 
     for (var k = 0; k < fixture.partC.length; k++){
       incrementer3.push(fixture.partC[k]);
       unified2.push(fixture.partC[k]);
     }
     var twicePooled = poolVariances(unified, incrementer3);
-    t.equal(twicePooled.variance(), unified2.variance(), 'pooled variances are pooled as if they were calculated explicitly')
+    t.equal(twicePooled.getVariance(), unified2.variance, 'pooled variances are pooled as if they were calculated explicitly')
   }
   t.end();
 });
